@@ -12,21 +12,20 @@
                         document.getElementById("thing").innerHTML = ajaxRequest.responseText;
                     }
                     else {
-                        console.log("Status error: " + ajaxRequest.status);
+                        document.getElementById("thing").innerHTML = "Status error: " + ajaxRequest.status;
                     }
                 }
                 else {
-                    console.log("Ignored readyState: " + ajaxRequest.readyState);
+                    document.getElementById("thing").innerHTML = "Ignored readyState: " + ajaxRequest.readyState;
                 }
 
-                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/search?q=sunflowers");
+                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/objects/45734");
                 ajaxRequest.send();
             }
         </script>
     </head>
 
-    <body>
-        <p onclick="getThing()">Click here to see art!</p>
-        <p id="thing"></p>
+    <body onload="getThing()">
+        <p id="thing">Loading...</p>
     </body>
 </html>
