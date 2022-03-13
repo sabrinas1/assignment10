@@ -19,7 +19,7 @@
                     document.getElementById("thing").innerHTML = "Ignored readyState: " + ajaxRequest.readyState;
                 }
 
-                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/departments");
+                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/departments", true);
                 ajaxRequest.send();
             }
         </script>
