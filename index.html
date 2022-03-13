@@ -7,6 +7,8 @@
             function getThing() {
                 var ajaxRequest = new XMLHttpRequest();
 
+                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/departments", true);
+
                 if (ajaxRequest.readyState == 4) {
                     if (ajaxRequest.status == 200) {
                         document.getElementById("thing").innerHTML = JSON.stringify(ajaxRequest.responseText);
@@ -19,7 +21,7 @@
                     document.getElementById("thing").innerHTML = "Ignored readyState: " + ajaxRequest.readyState;
                 }
 
-                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/departments", true);
+                
                 ajaxRequest.send();
             }
         </script>
