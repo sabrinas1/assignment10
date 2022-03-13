@@ -1,1 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API Fun</title>
+        <meta charset="UTF-8" />
+        <script>
+            function getThing() {
+                var ajaxRequest = new XMLHttpRequest();
 
+                if (ajaxRequest.readyState == 4) {
+                    if (ajaxRequest.status == 200) {
+                        document.getElementById("thing").innerHTML = ajaxRequest.responseText;
+                    }
+                }
+
+                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/objects/45734");
+                ajaxRequest.send();
+            }
+        </script>
+    </head>
+
+    <body>
+        <p id="thing" onclick="getThing()">Click here to see art!</p>
+        
+    </body>
+</html>
