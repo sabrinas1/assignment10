@@ -9,7 +9,7 @@
 
                 ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/departments", true);
 
-                ajaxRequest.onreadystatechange.getObject;
+                ajaxRequest.onreadystatechange = getObject();
                 ajaxRequest.send();
             }
 
@@ -30,7 +30,7 @@
                     document.getElementById("thing").innerHTML = "Too soon: " + ajaxRequest.status;
                 }
             }
-            
+
         </script>
     </head>
 
