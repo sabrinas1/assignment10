@@ -16,7 +16,7 @@
                         strHTML = "";
                         for (var i = 0; i < 19; i++) {
                             // strHTML = strHTML + departments[i].departmentId + ": " + departments[i].displayName + "<br/>";
-                            strHTML += departments[i] + "<br/>";
+                            strHTML += JSON.stringify(departments[i]) + "<br/>";
                         }
                         // departments.forEach(function (department) {
                         //     strHTML += department.departmentId + ": " + department.displayName + "<br/>";
