@@ -17,16 +17,26 @@
                         for (var i = 1; i <= departments.length; i++) {
                             strHTML += i + ": " + departments[i-1].displayName + "<br/>";
                         }
-                        document.getElementById("thing").innerHTML = strHTML;
+                        document.getElementById("xml").innerHTML = strHTML;
                     }
                     else if (ajaxRequest.readyState == 4 && ajaxRequest.status != 200) {
-                        document.getElementById("thing").innerHTML = "Something is wrong: " + ajaxRequest.status;
+                        document.getElementById("xml").innerHTML = "Something is wrong: " + ajaxRequest.status;
                     }
                     else if (ajaxRequest.readyState == 3) {
-                        document.getElementById("thing").innerHTML = "Too soon: " + ajaxRequest.status;
+                        document.getElementById("xml").innerHTML = "Too soon: " + ajaxRequest.status;
                     }
                 };
                 ajaxRequest.send();
+            }
+
+            function fetchThing() {
+                var fetchRequest = fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
+                object = fetchRequest.json();
+                strHTML = "MET DEPARTMENTS: <br/>";
+                for (var i = 1; i <= departments.length; i++) {
+                    strHTML += i + ": " + departments[i - 1].displayName + "<br/>";
+                }
+                document.getElementById("fetch").innerHTML = strHTML;
             }
 
             
@@ -35,6 +45,8 @@
     </head>
 
     <body onload="getThing()">
-        <div id="thing">Loading...</div>
+        <div id="xml">Loading...</div>
+        <br/><br/>
+        <div id="fetch">Loading...</div>
     </body>
 </html>
