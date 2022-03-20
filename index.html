@@ -15,7 +15,7 @@
                         departments = object.departments;
                         strHTML = "MET DEPARTMENTS: <br/>";
                         for (var i = 0; i < departments.length; i++) {
-                            strHTML += i + ": " + departments[i].displayName + "<br/>";
+                            strHTML += (i+1) + ": " + departments[i].displayName + "<br/>";
                         }
                         document.getElementById("thing").innerHTML = strHTML;
                     }
