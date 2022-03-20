@@ -12,16 +12,17 @@
                 ajaxRequest.onreadystatechange = function() {
                     if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
                         //document.getElementById("thing").innerHTML = ajaxRequest.responseText;
-                        departments = JSON.parse(ajaxRequest.responseText);
+                        object = JSON.parse(ajaxRequest.responseText);
+                        departments = object.departments;
                         strHTML = "MET DEPARTMENTS: <br/>";
                         // for (var i = 0; i < 19; i++) {
                         //     // strHTML = strHTML + departments[i].departmentId + ": " + departments[i].displayName + "<br/>";
                         //     strHTML += JSON.stringify(departments[i]) + "<br/>";
                         // }
-                        strHTML += JSON.stringify(departments);
-                        // departments.forEach(function (department) {
-                        //     strHTML += department.departmentId + ": " + department.displayName + "<br/>";
-                        // })
+                        //strHTML += JSON.stringify(departments);
+                        departments.forEach(function (department) {
+                            strHTML += department.departmentId + ": " + department.displayName + "<br/>";
+                        })
                         document.getElementById("thing").innerHTML = strHTML;
                     }
                     else if (ajaxRequest.readyState == 4 && ajaxRequest.status != 200) {
