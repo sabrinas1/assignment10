@@ -30,8 +30,8 @@
             }
 
             function fetchThing() {
-                var fetchRequest = fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments")
-                object = fetchRequest.json();
+                var fetchRequest = fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments.json")
+                object = fetchRequest;
                 strHTML = "MET DEPARTMENTS: <br/>";
                 for (var i = 1; i <= departments.length; i++) {
                     strHTML += i + ": " + departments[i - 1].displayName + "<br/>";
