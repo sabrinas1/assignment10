@@ -14,6 +14,9 @@
                         //document.getElementById("thing").innerHTML = ajaxRequest.responseText;
                         departments = JSON.parse(ajaxRequest.responseText);
                         strHTML = "";
+                        for (var i = 0; i < departments.length; i++) {
+                            strHTML += departments[i].departmentId + ": " + departments[i].displayName + "<br/>";
+                        }
                         // departments.forEach(function (department) {
                         //     strHTML += department.departmentId + ": " + department.displayName + "<br/>";
                         // })
