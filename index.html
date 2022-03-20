@@ -7,7 +7,9 @@
             function getThing() {
                 var ajaxRequest = new XMLHttpRequest();
 
-                ajaxRequest.open("GET", "https://collectionapi.metmuseum.org/public/collection/v1/departments", true);
+                ajaxRequest.open("GET", 
+                    "https://collectionapi.metmuseum.org/public/collection/v1/departments", 
+                    true);
 
                 ajaxRequest.onreadystatechange = function() {
                     if (ajaxRequest.readyState == 4 && ajaxRequest.status == 200) {
@@ -20,10 +22,12 @@
                         document.getElementById("xml").innerHTML = strHTML;
                     }
                     else if (ajaxRequest.readyState == 4 && ajaxRequest.status != 200) {
-                        document.getElementById("xml").innerHTML = "Something is wrong: " + ajaxRequest.status;
+                        document.getElementById("xml").innerHTML = "Something is wrong: "
+                         + ajaxRequest.status;
                     }
                     else if (ajaxRequest.readyState == 3) {
-                        document.getElementById("xml").innerHTML = "Too soon: " + ajaxRequest.status;
+                        document.getElementById("xml").innerHTML = "Too soon: "
+                         + ajaxRequest.status;
                     }
                 };
                 ajaxRequest.send();
@@ -59,6 +63,30 @@
     </head>
 
     <body>
+        <h1>MET Museum API</h1>
+        <br/>
+        <h2>What it does:</h2>
+        <p>The Met Museum API allows users to access information about the structure of the museum
+             and the pieces of art that are available for public view.</p>
+        <br/>
+        <h2>Found:</h2>
+        <p>I found this API through the github free api repository. The website for the API is: 
+             https://collectionapi.metmuseum.org/public/collection/v1/</p>
+        <br/>
+        <h2>Options used:</h2>
+        <p>The requests used for this page requested the department information, rather than works
+             of art. This returned an object containing a list of nested objects for each
+             department. Other options that could be used are the various fields the objects
+             (art) are classified by, such as identification number, title, year created, etc.</p>
+        <br/>
+        <h2>Applications:</h2>
+        <p>This API would be helpful to implement a search feature for the MET's website as it can
+             organize the objects (artwork) by several different aspects (such as searching for
+             all peices that contain sunflowers or were obtained in 1923). <br/>
+             This API can also be used to display a 'randomly' selected object by selecting a
+             random index in the objectIDs array and then searching for that id (and displaying
+             the accompanying image).</p>
+        <br/>
         <div id="xml" onclick="getThing()">Loading...</div>
         <br/><br/>
         <div id="fetch" onclick="fetchThing()">Loading...</div>
