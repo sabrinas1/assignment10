@@ -30,8 +30,8 @@
             }
 
             function fetchThing() {
-                const response = await fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments");
-                var data = await response.json();
+                const response = fetch("https://collectionapi.metmuseum.org/public/collection/v1/departments");
+                var data = response.json();
                 // object = JSON.parse(fetchRequest);
                 departments = data.departments;
                 strHTML = "MET DEPARTMENTS: <br/>";
