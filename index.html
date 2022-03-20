@@ -14,10 +14,11 @@
                         //document.getElementById("thing").innerHTML = ajaxRequest.responseText;
                         departments = JSON.parse(ajaxRequest.responseText);
                         strHTML = "MET DEPARTMENTS: <br/>";
-                        for (var i = 0; i < 19; i++) {
-                            // strHTML = strHTML + departments[i].departmentId + ": " + departments[i].displayName + "<br/>";
-                            strHTML += JSON.stringify(departments[i]) + "<br/>";
-                        }
+                        // for (var i = 0; i < 19; i++) {
+                        //     // strHTML = strHTML + departments[i].departmentId + ": " + departments[i].displayName + "<br/>";
+                        //     strHTML += JSON.stringify(departments[i]) + "<br/>";
+                        // }
+                        strHTML += JSON.stringify(departments);
                         // departments.forEach(function (department) {
                         //     strHTML += department.departmentId + ": " + department.displayName + "<br/>";
                         // })
