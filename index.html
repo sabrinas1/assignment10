@@ -23,7 +23,7 @@
                         document.getElementById("thing").innerHTML = "Something is wrong: " + ajaxRequest.status;
                     }
                     else if (ajaxRequest.readyState == 3) {
-                        document.getElementById("thing").innerHTML = "Too soon: " + ajaxRequest.readyState;
+                        document.getElementById("thing").innerHTML = "Too soon: " + ajaxRequest.status;
                     }
                 }
                 ajaxRequest.send();
